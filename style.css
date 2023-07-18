@@ -1,98 +1,41 @@
-*{
-    font-family: 'Poppins', sans-serif;
+function confirm(a) {
+    a.preventDefault()
+    const select = document.querySelector('.Estado');
+    const localidade = document.querySelector('.Localidade');
+    const logradouro = document.querySelector('.Cidade')
+    const cep = document.querySelector('.Cep')
+    fill(select, localidade, logradouro, cep)
 }
-body{
-    background-color: rgba(0, 0, 0, 0.981);
+async function fill(select, localidade, logradouro, cep) {
+    const url = `https://viacep.com.br/ws/${select.value}/${localidade.value}/${logradouro.value}/json//`
+    if (logradouro.value.length > 3) {
+        const api = await fetch(url)
+        const response = await api.json()
+        if (response.length == 0) {
+            animation(cep)
+            logradouro.classList.remove('invalid')
+            localidade.classList.remove('invalid')
+            cep.value = 'CEP não encontrado!'
+            localidade.value = "";
+            logradouro.value = "";
+
+        }
+        else {
+            animation(cep)
+            cep.value = response[0].cep
+            logradouro.classList.remove('invalid')
+            localidade.classList.remove('invalid')
+        }
+    }
+    else {
+        logradouro.classList.add('invalid')
+    }
+    if (localidade.value.length < 3) {
+        localidade.classList.add('invalid')
+    }
+
 }
-#inputs{
-    display: flex;
-    justify-content: center;
+function animation(cep) {
+    cep.classList.add('animation')
 }
-.section{
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding: 4em 2em;
-}
-.input{
-    width: 25em;
-    height: 3em;
-    transition-duration: 1s;
-    border-radius: .6em;
-    border: none;
-    box-shadow: 1px 1px 1px 1px rgb(255, 238, 0);
-    padding-left: 1em;
-}
-.Cep{
-    height: 0em;
-    background-color: white;
-}
-#btn{
-    height: 4em;
-    border-radius: 1em;
-    max-width: 26em;
-    margin-top: 5em;
-    margin-left: -14em;
-}
-.labelInputs{
-    margin-bottom: -1em;
-  color: white;
-}
-.animation{
-    height: 3em;
-    transition-duration: 1s;
-}
-@media screen and (max-width: 768px){
-    #inputs{
-        display: grid;
-        justify-content: center;
-    }
-    .input{
-        width: 19em;
-    }
-    .section{
-        display: grid;
-        flex-direction: column;
-        gap: 1em;
-        padding: 2em 0em;
-    }
-    .labelCidade{
-        position: relative;
-        top: 1em;
-    }
-    .Cidade{
-        position: relative;
-        top: 2em;
-    }
-    .labelUF{
-        position: relative;
-        bottom: 6em;
-    }
-    .Estado{
-        position: relative;
-        bottom: 6em;
-        width: 20em;
-    }
-    .labelLocalidade{
-        position: relative;
-        top: 9em;
-    }
-    .Localidade{
-        position: relative;
-        top: 12em;
-    }
-    .labelCEP{
-        position: relative;
-        top: 3em;
-    }
-    .Cep{
-        position: relative;
-        top: 5em;
-    }
-    #btn{
-        position: relative;
-        left: 14em;
-        top: 3em;
-        width: 20em;
-    }
-}
+document.querySelector('#inputs').addEventListener('submit', confirm)
