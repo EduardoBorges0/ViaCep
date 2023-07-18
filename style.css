@@ -64,10 +64,18 @@ body{
         position: relative;
         top: 2em;
     }
+    .labelUF{
+        position: relative;
+        bottom: 6em;
+    }
     .Estado{
         position: relative;
         bottom: 6em;
         width: 20em;
+    }
+    .labelLocalidade{
+        position: relative;
+        top: 9em;
     }
     .Localidade{
         position: relative;
@@ -86,13 +94,5 @@ body{
         left: 14em;
         top: 3em;
         width: 20em;
-    }
-    .labelUF{
-        position: relative;
-        bottom: 6em;
-    }
-    .labelLocalidade{
-        position: relative;
-        top: 9em;
     }
 }
