@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <title>ViaCep</title>
+</head>
+
+<body>
+    <main>
+        <form id="inputs">
+            <section class="section">
+                <label class="labelInputs labelCidade">Logradouro</label>
+                <input type="text" class="Cidade input" placeholder="Ex:Rua Severino Tomé Dos Santos">
+
+                <label class="labelInputs labelLocalidade">Localidade</label>
+                <input type="text" class="Localidade input" placeholder="Ex:São João De Meriti">
+            </section>
+            <section class="section">
+                <label class="labelInputs labelUF">Estado</label>
+                <select class="Estado input">
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso Do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio De Janeiro</option>
+                    <option value="RN">Rio Grande Do Norte</option>
+                    <option value="RS">Rio Grande Do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantis</option>
+                </select>
+                <label class="labelInputs labelCEP">Cep</label>
+                <input type="text" class="Cep input" disabled>
+                <button type="submit" id="btn">Confirmar</button>
+            </section>
+        </form>
+    </main>
+</body>
+</html>

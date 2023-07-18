@@ -1,0 +1,98 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.981);
+}
+#inputs{
+    display: flex;
+    justify-content: center;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 4em 2em;
+}
+.input{
+    width: 25em;
+    height: 3em;
+    transition-duration: 1s;
+    border-radius: .6em;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgb(255, 238, 0);
+    padding-left: 1em;
+}
+.Cep{
+    height: 0em;
+    background-color: white;
+}
+#btn{
+    height: 4em;
+    border-radius: 1em;
+    max-width: 26em;
+    margin-top: 5em;
+    margin-left: -14em;
+}
+.labelInputs{
+    margin-bottom: -1em;
+  color: white;
+}
+.animation{
+    height: 3em;
+    transition-duration: 1s;
+}
+@media screen and (max-width: 768px){
+    #inputs{
+        display: grid;
+        justify-content: center;
+    }
+    .input{
+        width: 19em;
+    }
+    .section{
+        display: grid;
+        flex-direction: column;
+        gap: 1em;
+        padding: 2em 0em;
+    }
+    .labelCidade{
+        position: relative;
+        top: 1em;
+    }
+    .Cidade{
+        position: relative;
+        top: 2em;
+    }
+    .Estado{
+        position: relative;
+        bottom: 6em;
+        width: 20em;
+    }
+    .Localidade{
+        position: relative;
+        top: 12em;
+    }
+    .labelCEP{
+        position: relative;
+        top: 3em;
+    }
+    .Cep{
+        position: relative;
+        top: 5em;
+    }
+    #btn{
+        position: relative;
+        left: 14em;
+        top: 3em;
+        width: 20em;
+    }
+    .labelUF{
+        position: relative;
+        bottom: 6em;
+    }
+    .labelLocalidade{
+        position: relative;
+        top: 9em;
+    }
+}
