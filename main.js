@@ -1,41 +1,38 @@
+'use strict'
 function confirm(a) {
     a.preventDefault()
     const select = document.querySelector('.Estado');
-    const localidade = document.querySelector('.Localidade');
-    const logradouro = document.querySelector('.Cidade')
+    const cidade = document.querySelector('.Cidade');//cidade
+    const localidade = document.querySelector('.Localidade') //localidade
     const cep = document.querySelector('.Cep')
-    fill(select, localidade, logradouro, cep)
+    fill(select, cidade, localidade, cep)
 }
-async function fill(select, localidade, logradouro, cep) {
-    const url = `https://viacep.com.br/ws/${select.value}/${localidade.value}/${logradouro.value}/json//`
-    if (logradouro.value.length > 3) {
+async function fill(select, cidade, localidade, cep) {
+    const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json//`
+    if (localidade.value.length > 3 && cidade.value.length > 3) {
         const api = await fetch(url)
         const response = await api.json()
         if (response.length == 0) {
             animation(cep)
-            logradouro.classList.remove('invalid')
             localidade.classList.remove('invalid')
+            cidade.classList.remove('invalid')
             cep.value = 'CEP não encontrado!'
-            localidade.value = "";
-            logradouro.value = "";
-
         }
         else {
             animation(cep)
             cep.value = response[0].cep
-            logradouro.classList.remove('invalid')
             localidade.classList.remove('invalid')
+            cidade.classList.remove('invalid')
         }
     }
     else {
-        logradouro.classList.add('invalid')
-    }
-    if (localidade.value.length < 3) {
+        animation(cep)
+        cep.value = "Preencha todas as caixas!"
         localidade.classList.add('invalid')
+        cidade.classList.add('invalid')
     }
-
 }
 function animation(cep) {
     cep.classList.add('animation')
 }
-document.querySelector('#inputs').addEventListener('submit', confirm)
+document.querySelector('#inputs-form').addEventListener('submit', confirm)
