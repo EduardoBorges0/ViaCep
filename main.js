@@ -7,11 +7,11 @@ function confirm(a) {
     const localidade = document.querySelector('.Localidade') //localidade
     const cep = document.querySelector('.Cep')
     //CALLING THE LOAD SCREEN FUNCTION
-    ShowLoading()
     //CALLING THE FUNCTION TOP PUT INFORMATION ON THE SCREEN
     fill(select, cidade, localidade, cep)
 }
 async function fill(select, cidade, localidade, cep) {
+    ShowLoading()
     //GETTING URL FROM THE ViaCepBrasil API
     const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json//`
     //CHECKING IF INPUTS ARE LONGER THAN 3 LETTERS
@@ -30,6 +30,7 @@ async function fill(select, cidade, localidade, cep) {
             cep.value = response[0].cep
             localidade.classList.remove('invalid')
             cidade.classList.remove('invalid')
+            ShowLoading()
         }
     }
     else {
