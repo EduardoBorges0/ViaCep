@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR ">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
+    <script src="loading.js" defer></script>
     <title>ViaCep</title>
 </head>
+
 <body>
     <main>
-        <form id="inputs-form">
+        <form id="inputs-form" class="input-form">
             <section class="section">
                 <label class="labelInputs labelLocalidade">Localidade</label>
                 <input type="text" class="Localidade input" placeholder="Ex:Rua Severino Tomé Dos Santos">
@@ -54,6 +57,9 @@
                 <button type="submit" id="btn">Confirmar</button>
             </section>
         </form>
+        <div class="load">
+            <span class="loading hide"></span>
+        </div>
     </main>
 </body>
 </html>
