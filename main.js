@@ -6,7 +6,6 @@ function confirm(a) {
     const cidade = document.querySelector('.Cidade');//cidade
     const localidade = document.querySelector('.Localidade') //localidade
     const cep = document.querySelector('.Cep')
-    //CALLING THE LOAD SCREEN FUNCTION
     //CALLING THE FUNCTION TOP PUT INFORMATION ON THE SCREEN
     fill(select, cidade, localidade, cep)
 }
