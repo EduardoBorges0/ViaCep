@@ -53,11 +53,57 @@ body {
     height: 3em;
     transition-duration: 1s;
 }
-
+/*FOR WHEN INPUT IS VALID*/
 .invalid {
     box-shadow: 1px 2px 1px 1px rgb(255, 15, 15);
 }
-
+/*FROM HERE DOWN TO THE RESPONSIVE MEDIA QUERY, ITS LOADING SCREEN STYLING*/
+.loading{
+    position: fixed;
+    text-align: center;
+    top: 15em;
+    width: 4.75em;
+    height: 4.75em;
+    background-color: transparent;
+}
+.loading{
+    display: block;
+    border: 7px solid yellow;
+    border-top: 7px solid transparent;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+.load{
+    display: flex;
+    justify-content: center;
+}
+.load{
+    position: relative;
+    bottom: 25em;
+}
+/*THESE LAST THREE ARE WHEN THE LOADING SCREEN IS APPARENT*/
+.blockBackground{
+   background-color: black;
+   opacity: 30%;
+}
+.hide{
+    display: none;
+    background-color: transparent;
+}
+.disabled{
+    pointer-events:none;
+    outline:none;
+}
+/*MEDIA QUERY ANIMATION*/
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*MEDIA QUERY RESPONSIVE*/
 @media screen and (max-width: 768px) {
     #inputs-form {
         display: grid;
@@ -115,8 +161,14 @@ body {
         position: relative;
         top: 0em;
     }
-
-    #btn {
+    .loading{
+        position: fixed;
+        top: 17em;
+        width: 2.75em;
+        height: 2.75em;
+        
+    }
+    #btn{
         position: relative;
         left: 0em;
         top: 5em;
