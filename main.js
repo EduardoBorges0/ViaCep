@@ -24,6 +24,7 @@ async function fill(select, cidade, localidade, cep) {
             localidade.classList.remove('invalid')
             cidade.classList.remove('invalid')
             cep.value = 'CEP não encontrado!'
+            ShowLoading()
         }
         else {
             animation(cep)
@@ -38,7 +39,7 @@ async function fill(select, cidade, localidade, cep) {
         cep.value = "Preencha todas as caixas!"
         localidade.classList.add('invalid')
         cidade.classList.add('invalid')
-
+        ShowLoading()
     }
 }
 function animation(cep) {
