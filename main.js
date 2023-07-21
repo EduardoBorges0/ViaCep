@@ -3,8 +3,8 @@
 function confirm(a) {
     a.preventDefault()
     const select = document.querySelector('.Estado');
-    const cidade = document.querySelector('.Cidade');//cidade
-    const localidade = document.querySelector('.Localidade') //localidade
+    const cidade = document.querySelector('.Cidade');
+    const localidade = document.querySelector('.Localidade')
     const cep = document.querySelector('.Cep')
     //CALLING THE FUNCTION TOP PUT INFORMATION ON THE SCREEN
     fill(select, cidade, localidade, cep)
