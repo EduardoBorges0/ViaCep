@@ -20,5 +20,5 @@ function ShowLoading() {
         block.classList.remove('blockBackground')
         btn.classList.remove('disabled')
         loading.classList.add('hide')
-    }, 1000)
+    }, 1280)
 }
