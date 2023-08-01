@@ -2,12 +2,12 @@
 //FUNCTION THAT WORKS WHEN CLICKING THE BUTTON
 function confirm(a) {
     a.preventDefault()
-    const select = document.querySelector('.Estado');
-    const cidade = document.querySelector('.Cidade');
-    const localidade = document.querySelector('.Localidade')
-    const cep = document.querySelector('.Cep')
+    const $select = document.querySelector('.Estado');
+    const $cidade = document.querySelector('.Cidade');
+    const $localidade = document.querySelector('.Localidade')
+    const $cep = document.querySelector('.Cep')
     //CALLING THE FUNCTION TOP PUT INFORMATION ON THE SCREEN
-    fill(select, cidade, localidade, cep)
+    fill($select, $cidade, $localidade, $cep)
 }
 async function fill(select, cidade, localidade, cep) {
     ShowLoading()
@@ -27,7 +27,7 @@ async function fill(select, cidade, localidade, cep) {
         }
         else {
             animation(cep)
-            cep.value = response[0].cep
+            cep.value = response[0].$cep
             localidade.classList.remove('invalid')
             cidade.classList.remove('invalid')
             ShowLoading()
