@@ -12,7 +12,7 @@ function confirm(a) {
 async function fill(select, cidade, localidade, cep) {
     ShowLoading()
     //GETTING URL FROM THE ViaCepBrasil API
-    const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json//`
+    const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json/`
     //CHECKING IF INPUTS ARE LONGER THAN 3 LETTERS
     if (localidade.value.length > 3 && cidade.value.length > 3) {
         const api = await fetch(url)
