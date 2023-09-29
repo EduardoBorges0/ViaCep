@@ -1,6 +1,6 @@
 'use strict'
 //LOADING SCREEN
-function ShowLoading() {
+const ShowLoading = ()=> {
     const block = document.querySelector('.input-form')
     const loading = document.querySelector('.loading')
     const select = document.querySelector('.Estado');
@@ -13,6 +13,6 @@ function ShowLoading() {
     btn.classList.toggle('disabled')
     block.classList.toggle('blockBackground')
     loading.classList.toggle('hide')
-   
+    
 }
 export {ShowLoading}
