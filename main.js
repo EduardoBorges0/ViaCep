@@ -1,6 +1,6 @@
 'use strict'
 //FUNCTION THAT WORKS WHEN CLICKING THE BUTTON
-
+import { ShowLoading } from "./loading.js";
 function confirm(a) {
     a.preventDefault()
     const select = document.querySelector('.Estado');
