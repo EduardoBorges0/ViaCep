@@ -1,19 +1,19 @@
 'use strict'
-import ShowLoading from './loading.js'
 //FUNCTION THAT WORKS WHEN CLICKING THE BUTTON
+import { ShowLoading } from "./loading.js";
 function confirm(a) {
     a.preventDefault()
-    const $select = document.querySelector('.Estado');
-    const $cidade = document.querySelector('.Cidade');
-    const $localidade = document.querySelector('.Localidade')
-    const $cep = document.querySelector('.Cep')
+    const select = document.querySelector('.Estado');
+    const cidade = document.querySelector('.Cidade');//cidade
+    const localidade = document.querySelector('.Localidade') //localidade
+    const cep = document.querySelector('.Cep')
     //CALLING THE FUNCTION TOP PUT INFORMATION ON THE SCREEN
-    fill($select, $cidade, $localidade, $cep)
+    fill(select, cidade, localidade, cep)
 }
 async function fill(select, cidade, localidade, cep) {
     ShowLoading()
     //GETTING URL FROM THE ViaCepBrasil API
-    const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json/`
+    const url = `https://viacep.com.br/ws/${select.value}/${cidade.value}/${localidade.value}/json//`
     //CHECKING IF INPUTS ARE LONGER THAN 3 LETTERS
     if (localidade.value.length > 3 && cidade.value.length > 3) {
         const api = await fetch(url)
@@ -28,7 +28,7 @@ async function fill(select, cidade, localidade, cep) {
         }
         else {
             animation(cep)
-            cep.value = response[0].$cep
+            cep.value = response[0].cep
             localidade.classList.remove('invalid')
             cidade.classList.remove('invalid')
             ShowLoading()
