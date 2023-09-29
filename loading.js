@@ -15,4 +15,4 @@ const ShowLoading = ()=> {
     loading.classList.toggle('hide')
     
 }
-export {ShowLoading}
+export default {ShowLoading}
