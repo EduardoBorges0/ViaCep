@@ -1,4 +1,5 @@
 'use strict'
+import ShowLoading from './loading.js'
 //FUNCTION THAT WORKS WHEN CLICKING THE BUTTON
 function confirm(a) {
     a.preventDefault()
